@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav component matches snapshot 1`] = `
+<DocumentFragment>
+  <header
+    class="flex-row px-1"
+  >
+    <h1>
+      <a
+        data-testid="link"
+        href="/"
+      >
+        <span
+          aria-label="life"
+          role="img"
+        >
+           🌱 
+        </span>
+         Portfolio by Hannah Han
+      </a>
+    </h1>
+    <nav>
+      <ul
+        class="flex-row"
+      >
+        <li
+          class="mx-2"
+        >
+          <a
+            data-testid="about"
+            href="#about"
+          >
+            About Me
+          </a>
+        </li>
+        <li
+          class="mx-2"
+        >
+          <span />
+          <a
+            href="contact"
+          >
+             Contact Me
+          </a>
+        </li>
+        <li
+          class="mx-1"
+        >
+          <span>
+            Portfolio
+          </span>
+        </li>
+        <li
+          class="mx-1"
+        >
+          <span>
+            Resume
+          </span>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</DocumentFragment>
+`;

@@ -11,16 +11,13 @@ describe('Nav component', () => {
         render(<Nav />);
       });
     // snapshot test
-    it('matches snapshot', () => {
-        const { asFragment } = render(<Nav />);
-        // assert value comparison
         it('matches snapshot', () => {
             const { asFragment } = render(<Nav />);
           
             expect(asFragment()).toMatchSnapshot();
           });
     });
-    })
+    
 
     describe('emoji is visible', () => {
         it('inserts emoji into the h1', () => {
@@ -35,9 +32,9 @@ describe('Nav component', () => {
       describe('links are visible', () => {
         it('inserts text into the links', () => {
           const { getByTestId } = render(<Nav />);
-          
+
           expect(getByTestId('link')).toHaveTextContent('Portfolio by Hannah Han');
-          expect(getByTestId('about')).toHaveTextContent('About me');
+          expect(getByTestId('about')).toHaveTextContent('About Me');
         });
       })
 
