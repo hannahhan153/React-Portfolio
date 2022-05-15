@@ -1,24 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { capitalizeFirstLetter } from '../../utils/helpers';
 
-function categorySelected(name) {
-    console.log(`${name} clicked`)
-}
-
-function Nav() {
-    const categories = [
-        {
-            name: "Portfolio",
-            description:
-              "Images of six of the developer's applications with links to both the deployed applications and the corresponding GitHub repositoryare displayed",
-          },
-          { name: "Resume", description: "A link to a downloadable resume and a list of the developer’s proficiencies are displayed"}
-    ];
-
-    const handleClick = (item) => {
-        console.log(item);
-        return item;
-      };
-
+function Nav(props) {
+    const {
+        categories = [],
+        setCurrentCategory,
+        currentCategory,
+    } = props;
 
     return (
         <header className="flex-row px-1">
@@ -30,18 +18,22 @@ function Nav() {
         <nav>
         <ul className ="flex-row">
             <li className="mx-2">
-                <a data-testid="about" href="#about" onClick={() => handleClick("About")}>About Me</a>
+                <a data-testid="about" href="#about" >About Me</a>
             </li>
-            <li className={"mx-2"}>
-                <span onClick={() => handleClick('Contact')}>
+            <li className="mx-2">
+                <span>Contact
                 </span> 
-                <a href="contact"> Contact Me</a>
             </li>
             {categories.map((category) => (
-                <li className="mx-1" key={category.name}
+                <li className={`mx-1 ${
+                    currentCategory.name === category.name && 'navActive'
+                }`} 
+                key={category.name}
                 >
-                    <span onClick={() => { handleClick(category.name); }}>
-                    {category.name}
+                    <span onClick={() => {setCurrentCategory(category)
+                    }}
+                    >
+                    {capitalizeFirstLetter(category.name)}
                     </span>
                     </li>
             ))}
@@ -51,4 +43,7 @@ function Nav() {
     );
 }
 
+useEffect(() => {
+    document.title =capitalizeFirstLetter(currentCategory.name);
+}, [currentCategory]);
 export default Nav;
