@@ -25,10 +25,10 @@ function Nav(props) {
         <nav>
         <ul className ="flex-row">
             <li className="mx-2">
-                <a data-testid="about" href="#about" >About Me</a>
+                <a data-testid="about" href="#about" onClick={() => setContactSelected(false)}>About Me</a>
             </li>
             <li className={"mx-2"}>
-                <span onClick={() => handleClick('Contact')}>Contact
+                <span onClick={() => setContactSelected(true)}>Contact
                 </span> 
             </li>
             {categories.map((category) => (
