@@ -4,8 +4,10 @@ import { capitalizeFirstLetter } from '../../utils/helpers';
 function Nav(props) {
     const {
         categories = [],
-        setCurrentCategory,
-        currentCategory,
+    setCurrentCategory,
+    currentCategory,
+    contactSelected,
+    setContactSelected
     } = props;
 
     const handleClick = (item) => {
