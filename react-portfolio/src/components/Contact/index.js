@@ -7,8 +7,16 @@ function ContactForm() {
     
     const [errorMessage, setErrorMessage] = useState('');
     const { name, email, message } = formState;
-    
-    function handleChange(e) {
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      if (!errorMessage) {
+        setFormState({ [e.target.name]: e.target.value });
+        console.log('Form', formState);
+      }
+    };
+
+    const handleChange = (e) => {
         if (e.target.name === 'email') {
             const isValid = validateEmail(e.target.value);
             console.log(isValid);
@@ -19,36 +27,42 @@ function ContactForm() {
                 setErrorMessage('');
               } 
           }  
-          console.log('errorMessage', errorMessage);
-        if (!errorMessage) {
-          setFormState({...formState, [e.target.name]: e.target.value })
-        }
-    }
-    function handleSubmit(e) {
-        e.preventDefault();
-        console.log(formState);
-    }
+          else {
+            if (!e.target.value.length) {
+              setErrorMessage(`${e.target.name} is required.`);
+            } else {
+              setErrorMessage('');
+            }
+          }
+        };
+    
     return (
         <section>
-          <h1>Contact me</h1>
+          <h1 data-testid="h1tag">Contact me</h1>
           <form id="contact-form" onSubmit={handleSubmit}>
             <div>
-  <label htmlFor="name">Name:</label>
-  <input type="text" defaultValue={name} onBlur={handleChange} name="name" />
+    <label htmlFor="name">Name:</label>
+    <input type="text" name="name" defaultValue={name} onBlur={handleChange}  />
             </div>
             <div>
   <label htmlFor="email">Email address:</label>
-  <input type="email" defaultValue={email} name="email" onBlur={handleChange} />
+  <input type="email" name="email" defaultValue={email} onBlur={handleChange} />
             </div>
             <div>
   <label htmlFor="message">Message:</label>
   <textarea name="message" defaultValue={message} onBlur={handleChange} rows="5"  />
-  <button type="submit">Submit</button>
-            </div>
+  </div>
+  {errorMessage && (
+    <div>
+    <p className="error-text">{errorMessage}</p>
+  </div>
+)}
+<button data-testid="button" type="submit">Submit</button>
+  
+            
           </form>
         </section>
-      )
-    // JSX
+      );
     }
     
     export default ContactForm;

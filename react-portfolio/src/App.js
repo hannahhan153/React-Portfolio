@@ -4,7 +4,6 @@ import About from './components/About';
 import Gallery from './components/Gallery';
 import ContactForm from './components/Contact';
 
-const [contactSelected, setContactSelected] = useState(false);
 //jsx not html
 function App() {
   const [categories] = useState([
@@ -17,6 +16,8 @@ function App() {
   ]);
 
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
+
+  const [contactSelected, setContactSelected] = useState(false);
 
   return (
     <div>
