@@ -13,7 +13,7 @@ function Nav(props) {
     return (
         <header className="flex-row px-1">
         <h1>
-            <a data-testid="link" href="/">
+            <a data-testid="link" >
                 <span role="img" aria-label="life"> 🌱 </span> Portfolio by Hannah Han
             </a>
         </h1>
