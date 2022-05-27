@@ -20,12 +20,12 @@ const PhotoList = ({ category }) => {
             liveSite: "https://guitar-shop-group-project.herokuapp.com/"
         },
         { 
-            name: 'placeholder',
+            name: 'Market Zero',
             category: 'portfolio',
-            description: 'Application allows ...',
-            imageSrc: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.fOOfY6dXQ3zw8Fj5HdQrbgHaIk%26pid%3DApi&f=1",
-            gitHubLink: "https://github.com/hannahhan153/Guitar-Shop",
-            liveSite: "https://guitar-shop-group-project.herokuapp.com/"
+            description: 'Application allows users to sign up and login to sell items from the categories of bowling, rugs, alcohol, receptacles, and miscellaneous and different conditions including gutter bad, split fair, spare good, strike excellent',
+            imageSrc: "https://github.com/Brian-Lets-Go/MarketZero/raw/main/Screenshot.PNG",
+            gitHubLink: "https://github.com/Brian-Lets-Go/MarketZero/tree/main",
+            liveSite: "https://stormy-gorge-49394.herokuapp.com/"
         
         },
         { 
