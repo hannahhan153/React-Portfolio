@@ -17,8 +17,8 @@ function Nav(props) {
                 <span role="img" aria-label="life"> 🌱 </span> Portfolio by Hannah Han
             </a>
         </h1>
-        <nav>
-        <ul className ="flex-row">
+        <nav >
+        <ul className ="flex-row ">
             <li className="mx-2">
                 <a data-testid="about" href="#about" onClick={() => setContactSelected(false)}>About Me</a>
             </li>
